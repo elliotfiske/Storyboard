@@ -258,4 +258,42 @@ nav ul li {
     height: 100px;
 }
 
+/* Top bar */
+#whitespace {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    
+    height: 20px;
+    width: 100%;
+}
+
+#header {
+    background-color: #08b3a2;
+    position: fixed;
+    
+    height: 100px;
+    width: 100%;
+    
+    z-index: 1000;
+    top: 20px;
+}
+
+#logindiv {
+    float: right;
+    margin-top: 20px;
+}
+
+#logo {
+    position: relative;
+    left: 18%;
+    background-color: red;
+    
+    height: 80px;
+    width: 150px;
+    
+    margin-top: 10px;
+}
+/* End top bar */
+
 

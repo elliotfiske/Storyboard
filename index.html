@@ -20,24 +20,21 @@
 
 </head>
 <body>
+
+<div id="whitespace"></div>
+
+<div id="header">
+    <div id="logo">LOGO GOES HERE</div>
+
+    <div class="grid_2" id = "logindiv">
+        <a href="javascript:auth.login('facebook', {
+        scope: 'email'
+        });">Login »</a>
+    </div>
+</div>
+
 <div class="container clearfix">
 
-	<div id = "navwrapper" class="grid_12 nav">
-
-		<div class="grid_2 omega" id="slogo">
-			<p><a href="#">sblogo</a></p>
-		</div>
-		<div class="grid_8">
-			<h1>welcome to StoryBoard</h1>
-		</div>
-
-		<div class="grid_2" id = "logindiv">
-    		<a href="javascript:auth.login('facebook', {
-    		scope: 'email'
-  			});">Login »</a>
-		</div>
-
-	</div>
 
 	<div class="grid_2" id= "left">
 
@@ -81,13 +78,13 @@
     </div>
 </div>
 <script>
-	var userData;
+	 var userData;
     var auth = new FirebaseSimpleLogin(dropRef, function(error, user) {
       if (error) {
         // an error occurred while attempting login
         alert(error);
       } else if (user) {
-        userData = user;
+        		userData = user;
 
             userData.profilePicture = "https://graph.facebook.com/" + userData.id + "/picture";
             $('#logindiv').html('Hey, ' + userData.first_name);
@@ -96,6 +93,9 @@
             img.src = userData.profilePicture;
             src = document.getElementById("logindiv");
             src.appendChild(img);
+
+            var fullName = userData.fullName;
+-        	dropRef.update({fullName: fullName});
         
       } else {
         // user is logged out
