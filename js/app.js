@@ -1,13 +1,16 @@
 $(document).ready (function(){
+    var iconType = 'food';
+    $('.circlecontainer').click(function (e) {
+        iconType = $(this).attr('type');
+        console.log(iconType + 'clicked');
+    });
+
 	$(".dragIcon").draggable({helper: "clone"});
     
 	$(".droprow").droppable({drop: function (e,ui) {
 		var element = $(ui.draggable).clone();
 
  		var activityNum = parseInt($(this).attr('id').match(/(\d+)$/)[0], 10);
-
-		var containerElement = $('.circlecontainer');
-        var iconType = containerElement.attr('type');
         
 		var newelement = element.html('<div class="circlecontainer '+iconType+'"><div class="icon"></div><p class="activitycontext"></p></div>');
     
