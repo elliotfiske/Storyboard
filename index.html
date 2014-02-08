@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>storyboard</title>
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user_scalable= no">
+	<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src = "js/jquery-ui-1.10.4.custom.js"></script>
+	<script>
+		function allowDrop(ev)
+		{
+		ev.preventDefault();
+		}
+
+		function drag(ev)
+		{
+		ev.dataTransfer.setData("Text",ev.target.id);
+		}
+
+		function drop(ev)
+		{
+		ev.preventDefault();
+		var data=ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+		}
+	</script>
+	<script type="text/javascript" src="js/app.js"></script>
+
+</head>
+<body>
+<div class="container clearfix">
+
+	<div class="grid_12 nav" id = "navwrapper">
+
+		<div class="grid_2 omega" id="slogo">
+
+			<!--<img src="#" alt = "sb_logo"> -->
+			<p><a href="#">sblogo</a></p>
+
+		</div>
+
+		<div class="grid_8">
+
+			<h1>welcome to StoryBoard</h1>
+
+		</div>
+
+		<div class="grid_2" id = "logindiv">
+
+			<p><a href="#">Login</a></p>
+
+		</div>
+
+	</div>
+
+	<div class="grid_2" id= "left">
+
+		<div class="grid_12 omega" id= "iconholder">
+
+			<div class="circle" id="drag1">
+				<div class="circlecontainer">
+					<img src="images/food_icon.png">
+					<p id="activitycontext"></p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="grid_10 omega">
+
+		<div class="grid_6 dropzone"></div>
+
+	</div>
+
+</div>
+</body>
+
+</html>
