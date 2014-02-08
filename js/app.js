@@ -1,4 +1,6 @@
 $(document).ready (function(){
+	$(".modal").addClass("ishidden");
+	$(".modaloverlay").addClass("ishidden");
     var iconType = 'food';
     
     $('.circlecontainer').mousedown(function (e) {
@@ -16,7 +18,9 @@ $(document).ready (function(){
 		var newelement = element.html('<div class="circlecontainer ' + iconType + '"><div class="icon"></div><span class="activitycontext"></span></div>');
     
 		$(this).append(newelement);
-		var activity = prompt("Please enter your activity that is " + iconType,"Hiking");
+		$(".modal").removeClass("ishidden");
+		$(".modaloverlay").removeClass("ishidden");
+		// var activity = prompt("Please enter your activity that is " + iconType,"Hiking");
 		if (activity!=null) {
 			x = 'my activity: ' +activity +'.';
 			newelement.find('span').html(x);
