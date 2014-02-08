@@ -8,13 +8,16 @@
 	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user_scalable= no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 	<script type="text/javascript" src = "js/jquery-ui-1.10.4.custom.js"></script>
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
 
 	<script>
-		var dropRef = new Firebase('https://blazing-fire-9099.firebaseio.com/');
+		var dropRef = new Firebase('https://blazing-fire-9099.firebaseio.com/users/USERNAME');
+        
+        var fullName = "Robert Henderson";
+        dropRef.update({fullName: fullName});
 	</script>
     
 	<script type="text/javascript" src="js/app.js"></script>
@@ -26,21 +29,14 @@
 	<div id = "navwrapper" class="grid_12 nav">
 
 		<div class="grid_2 omega" id="slogo">
-
 			<p><a href="#">sblogo</a></p>
-
 		</div>
-
 		<div class="grid_8">
-
 			<h1>welcome to StoryBoard</h1>
-
 		</div>
 
 		<div class="grid_2" id = "logindiv">
-
 			<p><a href="#">Login</a></p>
-
 		</div>
 
 	</div>
@@ -49,19 +45,24 @@
 
 		<div class="grid_12 omega" id= "iconholder">
 
-			<div class="circle" id="drag1">
+
+			<div class="dragIcon" id="drag1">
 				<div class="circlecontainer food">
 					<div class="icon"></div>
 				</div>
 			</div>
 
 		</div>
-
 	</div>
 
 	<div class="grid_10 omega">
 
-		<div class="grid_6 dropzone"></div>
+		<div id="dropzone" class="grid_6">
+            <div id="drop1" class="droprow even"></div>
+            <div id="drop2" class="droprow odd"></div>
+            <div id="drop3" class="droprow even"></div>
+            <div id="drop4" class="droprow odd"></div>
+        </div>
 
 	</div>
 

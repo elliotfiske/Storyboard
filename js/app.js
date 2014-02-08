@@ -1,11 +1,10 @@
-
-
-
 $(document).ready (function(){
-	$(".circle").draggable({helper: "clone"});
+	$(".dragIcon").draggable({helper: "clone"});
 	var counter = 0;
-	$(".dropzone").droppable({drop: function (e,ui) {
+	$(".droprow").droppable({drop: function (e,ui) {
 		var element = $(ui.draggable).clone();
+
+ 		var activityNum = parseInt($(this).attr('id').match(/(\d+)$/)[0], 10);
 
 		var containerElement = $('.circlecontainer');
 		var iconType = 'exercise';
@@ -22,7 +21,24 @@ $(document).ready (function(){
 			$('#dropped'+counter+' .activitycontext').html(x);
             dropRef.set(activity + ' time!');
 		}
-		
-		counter++;
-	}})
+        
+        $(this).empty();
+        
+        $(this).append(element);
+
+        switch (activityNum) {
+            case 1:
+                dropRef.update({activity1: activity});
+                break;
+            case 2:
+                dropRef.update({activity2: activity});
+                break;
+            case 3:
+                dropRef.update({activity3: activity});
+                break;
+            case 4:
+                dropRef.update({activity4: activity});
+                break;
+        }
+	}});
 })
