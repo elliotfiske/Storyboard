@@ -15,6 +15,8 @@ else:
     
 print 'USERNAME: ' + name
 
-html = open("index.html").read()
+html = open('index.html').read()
+
+html = html.replace('$USERNAME', name)
 
 print html
