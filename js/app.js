@@ -1,4 +1,6 @@
 $(document).ready (function(){
+	$(".modal").addClass("ishidden");
+	$(".modaloverlay").addClass("ishidden");
 	$(".dragIcon").draggable({helper: "clone"});
     
 	$(".droprow").droppable({drop: function (e,ui) {
@@ -12,7 +14,9 @@ $(document).ready (function(){
 		var newelement = element.html('<div class="circlecontainer '+iconType+'"><div class="icon"></div><p class="activitycontext"></p></div>');
     
 		$(this).append(newelement);
-		var activity = prompt("Please enter your activity that is " + iconType,"Hiking");
+		$(".modal").removeClass("ishidden");
+		$(".modaloverlay").removeClass("ishidden");
+		// var activity = prompt("Please enter your activity that is " + iconType,"Hiking");
 		if (activity!=null) {
 			x = "my activity: " +activity +".";
 			$('#dropped .activitycontext').html(x);
