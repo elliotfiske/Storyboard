@@ -122,6 +122,11 @@ nav ul li {
 	background-image: url(../images/food_icon.png);
 }
 
+.circlecontainer.exercise .icon {
+	background-image: url(../images/outdoors_icon.png);
+}
+
+
 .circlecontainer .icon {
 	float:left;
 	width: 100px;

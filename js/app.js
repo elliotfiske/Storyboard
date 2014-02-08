@@ -1,6 +1,6 @@
 $(document).ready (function(){
 	$(".dragIcon").draggable({helper: "clone"});
-	var counter = 0;
+    
 	$(".droprow").droppable({drop: function (e,ui) {
 		var element = $(ui.draggable).clone();
 
@@ -9,13 +9,13 @@ $(document).ready (function(){
 		var containerElement = $('.circlecontainer');
         var iconType = containerElement.attr('type');
         
-		var newelement = element.html('<div id="dropped'+counter+'" class="circlecontainer '+iconType+'"><div class="icon"></div><p class="activitycontext"></p></div>');
+		var newelement = element.html('<div class="circlecontainer '+iconType+'"><div class="icon"></div><p class="activitycontext"></p></div>');
     
 		$(this).append(newelement);
-		var activity = prompt("Please enter your activity","Hiking");
+		var activity = prompt("Please enter your activity that is " + iconType,"Hiking");
 		if (activity!=null) {
 			x = "my activity: " +activity +".";
-			$('#dropped'+counter+' .activitycontext').html(x);
+			$('#dropped .activitycontext').html(x);
             dropRef.set(activity + ' time!');
 		}
         
