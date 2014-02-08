@@ -1,7 +1,7 @@
 $(document).ready (function(){
     var iconType = 'food';
     
-    $('.circlecontainer').click(function (e) {
+    $('.circlecontainer').mousedown(function (e) {
         iconType = $(this).attr('type');
         console.log(iconType + 'clicked');
     });
@@ -13,7 +13,7 @@ $(document).ready (function(){
 
  		var activityNum = parseInt($(this).attr('id').match(/(\d+)$/)[0], 10);
         
-		var newelement = element.html('<div class="circlecontainer '+iconType+'"><div class="icon"></div><span class="activitycontext"></span></div>');
+		var newelement = element.html('<div class="circlecontainer ' + iconType + '"><div class="icon"></div><span class="activitycontext"></span></div>');
     
 		$(this).append(newelement);
 		var activity = prompt("Please enter your activity that is " + iconType,"Hiking");
