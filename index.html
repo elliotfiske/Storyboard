@@ -12,13 +12,9 @@
 	<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 	<script type="text/javascript" src = "js/jquery-ui-1.10.4.custom.js"></script>
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script>
 
-	<script>
-		var dropRef = new Firebase('https://blazing-fire-9099.firebaseio.com/users/USERNAME');
-        
-        var fullName = "Robert Henderson";
-        dropRef.update({fullName: fullName});
-	</script>
+	<script>var dropRef = new Firebase('https://blazing-fire-9099.firebaseio.com/users/USERNAME');</script>
     
 	<script type="text/javascript" src="js/app.js"></script>
 
@@ -36,7 +32,9 @@
 		</div>
 
 		<div class="grid_2" id = "logindiv">
-			<p><a href="#">Login</a></p>
+    		<a href="javascript:auth.login('facebook', {
+    		scope: 'email'
+  			});">Login »</a>
 		</div>
 
 	</div>
@@ -73,6 +71,29 @@
 	</div>
 
 </div>
+<script>
+	var userData;
+    var auth = new FirebaseSimpleLogin(dropRef, function(error, user) {
+      if (error) {
+        // an error occurred while attempting login
+        alert(error);
+      } else if (user) {
+        userData = user;
+
+            userData.profilePicture = "https://graph.facebook.com/" + userData.id + "/picture";
+            $('#logindiv').html('Hey, ' + userData.first_name);
+
+            var img = document.createElement("img");
+            img.src = userData.profilePicture;
+            src = document.getElementById("logindiv");
+            src.appendChild(img);
+        
+      } else {
+        // user is logged out
+      }
+    });
+ </script>;
+
 </body>
 
 </html>
