@@ -5,32 +5,41 @@
   <script type='text/javascript'
     src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'>
   </script>
+</head>
+<body>
+<div id= "page">
+  <p>
+    <a href="javascript:auth.login('facebook', {
+    scope: 'email'
+  });">Launch demo »</a>
+  </p>
+</div>
 
-
-  <script>
+<script>
     // instatiate the FirebaseSimpleLogin and monitor the user's auth state
     var chatRef = new Firebase('https://blazing-fire-9099.firebaseio.com');
+    var userData;
     var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
       if (error) {
         // an error occurred while attempting login
         alert(error);
       } else if (user) {
-        // user authenticated with Firebase
-        alert('User ID: ' + user.id + ', Provider: ' + user.provider);
+        userData = user;
+
+            alert('User ID: ' + userData.id + ', Provider: ' + userData.provider + ', displayName: ' + userData.displayName);
+
+            userData.profilePicture = "https://graph.facebook.com/" + userData.id + "/picture";
+            if(userData.profilePicture) {
+            var img = document.createElement("img");
+            img.src = userData.profilePicture;
+            src = document.getElementById("page");
+            src.appendChild(img);
+          }
+        
       } else {
         // user is logged out
       }
     });
-
-
   </script>
-</head>
-<body>
-
-
-  <p>
-    <a href="javascript:auth.login('facebook');">Launch demo »</a>
-  </p>
-
 </body>
 </html>
