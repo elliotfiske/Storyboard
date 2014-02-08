@@ -17,6 +17,6 @@ print 'USERNAME: ' + name
 
 html = open('index.html').read()
 
-html = html.replace('$USERNAME', name)
+html = html.replace('USERNAME', name)
 
 print html

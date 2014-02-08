@@ -7,13 +7,10 @@ $(document).ready (function(){
  		var activityNum = parseInt($(this).attr('id').match(/(\d+)$/)[0], 10);
 
 		var containerElement = $('.circlecontainer');
-		var iconType = 'exercise';
-		if(containerElement.hasClass('food')) {
-			iconType = 'food';
-		} 
-
+        var iconType = containerElement.attr('type');
+        
 		var newelement = element.html('<div id="dropped'+counter+'" class="circlecontainer '+iconType+'"><div class="icon"></div><p class="activitycontext"></p></div>');
-		//$(this).append(element);
+    
 		$(this).append(newelement);
 		var activity = prompt("Please enter your activity","Hiking");
 		if (activity!=null) {
@@ -22,10 +19,11 @@ $(document).ready (function(){
             dropRef.set(activity + ' time!');
 		}
         
+        // Wipe the old children and add the new one
         $(this).empty();
-        
         $(this).append(element);
 
+        // Talk to firebase and tell it the new change
         switch (activityNum) {
             case 1:
                 dropRef.update({activity1: activity});
@@ -42,3 +40,7 @@ $(document).ready (function(){
         }
 	}});
 })
+
+
+
+// var newElement = $('<div></div>').addClass(iconType).addClass('circlecontainer')
