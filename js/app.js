@@ -1,25 +1,29 @@
 $(document).ready (function(){
 	$(".modal").addClass("ishidden");
 	$(".modaloverlay").addClass("ishidden");
+    var iconType = 'food';
+    
+    $('.circlecontainer').click(function (e) {
+        iconType = $(this).attr('type');
+        console.log(iconType + 'clicked');
+    });
+
 	$(".dragIcon").draggable({helper: "clone"});
     
 	$(".droprow").droppable({drop: function (e,ui) {
 		var element = $(ui.draggable).clone();
 
  		var activityNum = parseInt($(this).attr('id').match(/(\d+)$/)[0], 10);
-
-		var containerElement = $('.circlecontainer');
-        var iconType = containerElement.attr('type');
         
-		var newelement = element.html('<div class="circlecontainer '+iconType+'"><div class="icon"></div><p class="activitycontext"></p></div>');
+		var newelement = element.html('<div class="circlecontainer '+iconType+'"><div class="icon"></div><span class="activitycontext"></span></div>');
     
 		$(this).append(newelement);
 		$(".modal").removeClass("ishidden");
 		$(".modaloverlay").removeClass("ishidden");
 		// var activity = prompt("Please enter your activity that is " + iconType,"Hiking");
 		if (activity!=null) {
-			x = "my activity: " +activity +".";
-			$('#dropped .activitycontext').html(x);
+			x = 'my activity: ' +activity +'.';
+			newelement.find('span').html(x);
             dropRef.set(activity + ' time!');
 		}
         
