@@ -9,7 +9,7 @@ $(document).ready (function(){
 		var activity = prompt("Please enter your activity","Hiking");
 		if (activity!=null) {
 			x = "my activity: " +activity +".";
-			document.getElementById("activitycontext").innerHTML=x;
+			$(".activitycontext").html(x);
             dropRef.set(activity + ' time!');
 		}
 	}})

@@ -1,5 +1,4 @@
 /*global*/
-
 body {
 	font-family: 'arial', sans-serif;
 	font-weight: 100;
@@ -119,20 +118,19 @@ nav ul li {
 	margin:auto;
 	/* background-color: blue; */
 	border-radius: 50%;
-	height: 50px;
-	width: 50px;
 
 }
 .circle p {
-	color: white;
+
 }
 .circlecontainer {
 	height: 100%;
 	width:100%;
 	position: relative;
 	vertical-align: middle;
-	text-align: center;
-	line-height: 50px;
+}
+.circlecontainer img {
+	float:left;
 }
 
 /* Media Queries */
