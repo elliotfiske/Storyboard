@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- hello world -->
+<!-- hello world part 2 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>storyboard</title>
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/login.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src = "js/jquery-ui-1.10.4.custom.js"></script>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script>
+
+	<script>var dropRef = new Firebase('https://blazing-fire-9099.firebaseio.com/users/USERNAME');</script>
+    
+	<script type="text/javascript" src="js/app.js"></script>
+
+</head>
+<body>
+	<div class="container clearfix">
+		<header class="grid_12">
+			<img id="sblogo" src="images/StoryBoard_logo.png">
+		</header>
+		<div id="logincontainer" class="grid_12">
+			email or username: <br/><input id = "username" type="text"><br/>
+			password: <br/><input id="passwordinput" type = "text"><br/>
+			or sign in with Facebook!: <br/><input id = "facebooksignin" type="button" value="Facebook">
+		</div>
+	</div>
+
+
+
+
+</body>
+
+</html>
