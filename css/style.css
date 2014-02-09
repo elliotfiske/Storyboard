@@ -261,8 +261,6 @@ nav ul li {
 /* Top bar */
 #whitespace {
     background-color: white;
-    position: fixed;
-    top: 0;
     
     height: 20px;
     width: 100%;
@@ -270,13 +268,13 @@ nav ul li {
 
 #header {
     background-color: #08b3a2;
-    position: fixed;
     
     height: 100px;
     width: 100%;
     
+    margin-bottom: 100px;
+    
     z-index: 1000;
-    top: 20px;
 }
 
 #logindiv {

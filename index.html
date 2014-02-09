@@ -21,8 +21,6 @@
 </head>
 <body>
 
-<div id="spacer"></div>
-
 <div id="whitespace"></div>
 
 <div id="header">
@@ -84,7 +82,7 @@
         // an error occurred while attempting login
         alert(error);
       } else if (user) {
-        		userData = user;
+        	userData = user;
 
             userData.profilePicture = "https://graph.facebook.com/" + userData.id + "/picture";
             var greeting = $('<div></div>').html('Hey, ' + userData.first_name);
