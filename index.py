@@ -13,7 +13,7 @@ if usermatch is None:
 else:
     name = str(usermatch.group(1))
     
-print 'USERNAME: ' + name
+#print 'USERNAME: ' + name
 
 html = open('index.html').read()
 
