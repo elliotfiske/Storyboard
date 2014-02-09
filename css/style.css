@@ -161,6 +161,8 @@ nav ul li {
 	right:0;
 	bottom: 0;
 	left: 0;
+    
+    height: 200%;
 }
 .modal {
 	width: 500px;
@@ -169,7 +171,11 @@ nav ul li {
 	top:50%;
 	left:50%;
 	margin:-200px 0 0 -250px;
-	background-color: white;
+	background-color: #9cd4cb;
+    border-radius: 15px;
+    
+    color: white;
+    font-size: 18px;
 }
 .modaloverlay.ishidden,
 .modal.ishidden {
@@ -302,7 +308,8 @@ nav ul li {
 
 #logindiv {
     float: right;
-    margin-top: -75px;
+    margin-top: -84px;
+    margin-right: 690px;
     background-color: rgb(121, 121, 121);
     border-radius: 25px;
     padding: 10px;
@@ -366,3 +373,7 @@ nav ul li {
     top: 23px;
 }
 
+form {
+    text-align: center;
+    padding-top: 50px;
+}
