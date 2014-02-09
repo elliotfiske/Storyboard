@@ -281,7 +281,11 @@ nav ul li {
 
 #logindiv {
     float: right;
-    margin-top: 20px;
+    margin-top: -68px;
+    background-color: rgb(121, 121, 121);
+    border-radius: 25px;
+    PADDING: 10PX;
+    width: 180px;
 }
 
 #logo {
@@ -293,6 +297,10 @@ nav ul li {
     width: 150px;
     
     margin-top: 10px;
+}
+
+#spacer {
+    height: 140px;
 }
 /* End top bar */
 
