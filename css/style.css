@@ -281,10 +281,10 @@ nav ul li {
 
 #logindiv {
     float: right;
-    margin-top: -68px;
+    margin-top: -75px;
     background-color: rgb(121, 121, 121);
     border-radius: 25px;
-    PADDING: 10PX;
+    padding: 10px;
     width: 180px;
 }
 

@@ -28,10 +28,8 @@
 <div id="header">
     <div id="logo">LOGO GOES HERE</div>
 
-    <div class="grid_2" id = "logindiv">
-        <a href="javascript:auth.login('facebook', {
-        scope: 'email'
-        });">Login »</a>
+    <div id = "logindiv">
+        <a href="javascript:auth.login('facebook', {scope: 'email'});">Login</a>
     </div>
 </div>
 
@@ -96,12 +94,13 @@
         		userData = user;
 
             userData.profilePicture = "https://graph.facebook.com/" + userData.id + "/picture";
-            $('#logindiv').html('Hey, ' + userData.first_name);
+            var greeting = $('<div></div>').html('Hey, ' + userData.first_name);
 
             var img = document.createElement("img");
             img.src = userData.profilePicture;
-            src = document.getElementById("logindiv");
-            src.appendChild(img);
+            src = $("#logindiv");
+            src.append(img);
+            src.append(greeting);
 
             var fullName = userData.fullName;
 -        	dropRef.update({fullName: fullName});
