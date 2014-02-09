@@ -14,7 +14,11 @@
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script>
 
-	<script>var dropRef = new Firebase('https://blazing-fire-9099.firebaseio.com/users/USERNAME');</script>
+	<script>var dropRef = new Firebase('https://blazing-fire-9099.firebaseio.com/users/USERNAME');
+
+            var fullName = userData.fullName;
+       	dropRef.update({fullName: fullName});
+</script>
     
 	<script type="text/javascript" src="js/app.js"></script>
 
@@ -29,7 +33,7 @@
     </div>
 
     <div id = "logindiv">
-        <a href="javascript:auth.login('facebook', {scope: 'email'});">Login</a>
+        <a href="javascript:auth.login('facebook');">Login</a>
     </div>
 </div>
 
@@ -105,16 +109,13 @@
         	userData = user;
 
             userData.profilePicture = "https://graph.facebook.com/" + userData.id + "/picture";
-            var greeting = $('<div></div>').html('Hey, ' + userData.first_name);
 
+            $('#logindiv').html('Hey, ' + userData.first_name + '!');
             var img = document.createElement("img");
             img.src = userData.profilePicture;
             src = $("#logindiv");
             src.append(img);
             src.append(greeting);
-
-            var fullName = userData.fullName;
--        	dropRef.update({fullName: fullName});
         
       } else {
         // user is logged out
