@@ -126,6 +126,14 @@ nav ul li {
 	background-image: url(../images/outdoors_icon.png);
 }
 
+.circlecontainer.misc .icon {
+	background-image: url(../images/misc_icon.png);
+}
+
+.circlecontainer.events .icon {
+	background-image: url(../images/events_icon.png);
+}
+
 
 .circlecontainer .icon {
 	float:left;
@@ -292,13 +300,15 @@ nav ul li {
 
 #logo {
     position: relative;
-    left: 18%;
-    background-color: red;
+    left: 12%;
     
-    height: 80px;
-    width: 150px;
+    height: 97px;
+    width: 440px;
     
     margin-top: 10px;
+    
+    background-image: url(../images/logo.png);
+    background-size: 100%
 }
 
 #spacer {
@@ -329,5 +339,19 @@ nav ul li {
     text-align: center;
     font-size: 28px;
     color: white;
+}
+
+#activitydesc1, #activitydesc2, #activitydesc3, #activitydesc4 {
+    color: white;
+    font-size: 24px;
+    position: relative;
+    top: 23px;
+}
+
+#activityloc1, #activityloc2, #activityloc3, #activityloc4 {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    top: 23px;
 }
 
